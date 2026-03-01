@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gameGrid = document.getElementById('game-grid');
-    
+
     // Simulate slight delay for premium feel
     setTimeout(() => {
         fetch('games.json')
@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderGames(games);
             })
             .catch(error => {
-                showError(error.message);
+                let msg = error.message;
+                if (window.location.protocol === 'file:') {
+                    msg = 'System Blocked: Browser security prevents loading games.json via file://.<br><br><b>To Fix:</b><br>1. Upload to GitHub<br>2. OR use "Live Server" in VS Code<br>3. OR run a local Python server.';
+                }
+                showError(msg);
             });
     }, 800);
 });
