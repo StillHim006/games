@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Crosser | GamerHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="game-page">
+    <div class="bg-glow"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-nav">
+                <div class="nav-controls" style="display:flex; gap:10px;">
+                    <button id="fullscreen-btn" class="fullscreen-btn">⛶ Full Screen</button>
+                    <a href="../../index.html" class="back-link">← Hub</a>
+                </div>
+                <div class="logo-mini">
+                    <h1>ROAD<span>CROSSER</span></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="game-container">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="label">Level</span>
+                    <span id="level" class="value">1</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Layer</span>
+                    <span id="level" class="value">1</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Time Remaining</span>
+                    <span id="timer" class="value">45s</span>
+                </div>
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="frogger-canvas" width="400" height="400"></canvas>
+            </div>
+
+            <div class="controls-info">
+                <p>Use <b>Arrow Keys</b> to dodge the data streams</p>
+                <button id="reset-btn" class="play-btn">Initialize Transit</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
