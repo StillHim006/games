@@ -1,0 +1,26 @@
+.canvas-wrapper {
+    background: linear-gradient(to bottom, #050614, #0a0b1e);
+    border: 2px solid var(--glass-border);
+    border-radius: 12px;
+    margin: 20px auto;
+    position: relative;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+}
+
+.stat .value {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+@media (max-width: 640px) {
+    .canvas-wrapper {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,92 @@
+.grid-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: fit-content;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.mine-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 35px);
+    grid-template-rows: repeat(10, 35px);
+    gap: 4px;
+}
+
+.cell {
+    width: 35px;
+    height: 35px;
+    background: #1a1b3a;
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.cell:hover:not(.revealed) {
+    background: #2a2b4a;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.cell.revealed {
+    background: rgba(255, 255, 255, 0.05);
+    cursor: default;
+}
+
+.cell.mine {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.cell.flagged {
+    color: var(--primary);
+}
+
+.cell.flagged::after {
+    content: '🚩';
+    font-size: 0.8rem;
+}
+
+.cell[data-count="1"] {
+    color: #4facfe;
+}
+
+.cell[data-count="2"] {
+    color: #00f2fe;
+}
+
+.cell[data-count="3"] {
+    color: #ff00c1;
+}
+
+.cell[data-count="4"] {
+    color: #ff4b2b;
+}
+
+.stat .value {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+@media (max-width: 420px) {
+    .mine-grid {
+        grid-template-columns: repeat(10, 28px);
+        grid-template-rows: repeat(10, 28px);
+        gap: 2px;
+    }
+
+    .cell {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+}
