@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gameGrid = document.getElementById('game-grid');
 
-    // Simulate slight delay for premium feel
+    // Simulate loading delay for "Pro" feel
     setTimeout(() => {
         fetch('games.json')
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Mainframe connection lost. Please refresh.');
-                }
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.json();
             })
             .then(games => {
@@ -20,31 +18,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 showError(msg);
             });
-    }, 800);
+    }, 600);
 });
 
 function renderGames(games) {
     const gameGrid = document.getElementById('game-grid');
-    gameGrid.innerHTML = ''; // Remove loader
+    gameGrid.innerHTML = ''; // Clear loader
 
-    games.forEach((game, index) => {
-        const card = document.createElement('article');
+    games.forEach(game => {
+        const card = document.createElement('a');
+        card.href = game.url;
         card.className = 'game-card';
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        const thumbnail = game.thumbnail || 'https://via.placeholder.com/400x250/151632/00f2fe?text=' + encodeURIComponent(game.title);
 
         card.innerHTML = `
-            <div class="card-image">
-                <img src="${thumbnail}" alt="${game.title}" loading="lazy">
-            </div>
             <div class="card-content">
-                <div class="category">${game.category || 'Game'}</div>
                 <h3>${game.title}</h3>
-                <p>${game.description}</p>
-                <a href="${game.url}" class="play-btn">Launch Game</a>
+                <p>${game.desc}</p>
+                <div class="play-label">Launch System</div>
             </div>
         `;
+
         gameGrid.appendChild(card);
     });
 }
@@ -52,11 +45,10 @@ function renderGames(games) {
 function showError(message) {
     const gameGrid = document.getElementById('game-grid');
     gameGrid.innerHTML = `
-        <div class="error-state">
-            <span class="error-icon">⚠️</span>
-            <h3>System Failure</h3>
-            <p>${message}</p>
-            <button onclick="location.reload()" class="play-btn">Retry Connection</button>
+        <div class="error-container" style="grid-column: 1/-1; text-align: left; padding: 40px; border: 1px solid var(--accent); border-radius: 12px; background: rgba(255, 0, 193, 0.05);">
+            <h3 style="color: var(--accent); margin-bottom: 15px; font-family: 'Orbitron';">System Breach Detected</h3>
+            <p style="color: var(--text-dim); line-height: 1.6;">${message}</p>
+            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: var(--accent); border: none; border-radius: 4px; color: white; cursor: pointer; font-family: 'Orbitron'; font-size: 0.8rem;">Re-initialize</button>
         </div>
     `;
 }
