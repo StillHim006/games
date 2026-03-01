@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const gameGrid = document.getElementById('game-grid');
-
-    // Simulate loading delay for "Pro" feel
+    // Initial load
     setTimeout(() => {
         fetch('games.json')
             .then(response => {
@@ -14,16 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => {
                 let msg = error.message;
                 if (window.location.protocol === 'file:') {
-                    msg = 'System Blocked: Browser security prevents loading games.json via file://.<br><br><b>To Fix:</b><br>1. Upload to GitHub<br>2. OR use "Live Server" in VS Code<br>3. OR run a local Python server.';
+                    msg = 'SECURITY PROTOCOL ACTIVE: Browser security prevents loading games.json via file://. Please upload to GitHub for clearance.';
                 }
                 showError(msg);
             });
-    }, 600);
+    }, 800);
 });
 
 function renderGames(games) {
     const gameGrid = document.getElementById('game-grid');
-    gameGrid.innerHTML = ''; // Clear loader
+    gameGrid.innerHTML = '';
 
     games.forEach(game => {
         const card = document.createElement('a');
@@ -31,10 +29,12 @@ function renderGames(games) {
         card.className = 'game-card';
 
         card.innerHTML = `
+            <span class="card-icon">${game.icon}</span>
             <div class="card-content">
+                <div class="card-tagline">${game.tagline}</div>
                 <h3>${game.title}</h3>
-                <p>${game.desc}</p>
-                <div class="play-label">Launch System</div>
+                <p>${game.description}</p>
+                <div class="launch-btn">Execute Simulation</div>
             </div>
         `;
 
@@ -45,10 +45,10 @@ function renderGames(games) {
 function showError(message) {
     const gameGrid = document.getElementById('game-grid');
     gameGrid.innerHTML = `
-        <div class="error-container" style="grid-column: 1/-1; text-align: left; padding: 40px; border: 1px solid var(--accent); border-radius: 12px; background: rgba(255, 0, 193, 0.05);">
-            <h3 style="color: var(--accent); margin-bottom: 15px; font-family: 'Orbitron';">System Breach Detected</h3>
-            <p style="color: var(--text-dim); line-height: 1.6;">${message}</p>
-            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: var(--accent); border: none; border-radius: 4px; color: white; cursor: pointer; font-family: 'Orbitron'; font-size: 0.8rem;">Re-initialize</button>
+        <div class="error-node" style="grid-column: 1/-1; padding: 40px; border: 1px solid var(--terminal-magenta); background: rgba(255, 0, 193, 0.02); text-align: center;">
+            <h3 style="color: var(--terminal-magenta); margin-bottom: 20px; font-family: 'Orbitron'; font-size: 1.2rem;">SYSTEM ERROR // ACCESS DENIED</h3>
+            <p style="color: var(--text-dim); line-height: 1.8; font-family: 'Orbitron'; font-size: 0.8rem;">${message}</p>
+            <button onclick="location.reload()" style="margin-top: 30px; padding: 12px 24px; background: transparent; border: 1px solid var(--terminal-magenta); color: var(--terminal-magenta); cursor: pointer; font-family: 'Orbitron'; text-transform: uppercase; letter-spacing: 2px;">Retry Link</button>
         </div>
     `;
 }

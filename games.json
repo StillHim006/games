@@ -2,81 +2,91 @@
     {
         "id": 1,
         "title": "Tic-Tac-Toe",
+        "tagline": "Perfect Information Duel",
+        "icon": "╳",
         "category": "Classic",
-        "description": "The ultimate strategic battle of circles and crosses. Challenge your wits in this timeless classic!",
-        "thumbnail": "https://img.freepik.com/free-vector/tic-tac-toe-game_1308-41221.jpg",
+        "description": "A finite, deterministic, zero-sum game. Can you force a win, or is a draw inevitable?",
         "url": "games/01-tic-tac-toe/"
     },
     {
         "id": 2,
         "title": "Memory Match",
+        "tagline": "Combinatorial Probability Test",
+        "icon": "◆",
         "category": "Puzzle",
-        "description": "Sharpen your mind by finding pairs of hidden symbols. How fast can you clear the board?",
-        "thumbnail": "https://img.freepik.com/free-vector/colorful-memory-match-game-set_23-2148906915.jpg",
+        "description": "Minimize the expected number of turns using perfect working memory and statistical analysis.",
         "url": "games/02-memory-match/"
     },
     {
         "id": 3,
         "title": "Neon Snake",
+        "tagline": "Queue-Based Pathfinding",
+        "icon": "∽",
         "category": "Arcade",
-        "description": "Navigate the neon grid, consume energy, and grow. Just don't bite your own tail!",
-        "thumbnail": "https://img.freepik.com/premium-photo/retro-snake-game-neon-blue-purple-light_1029473-107026.jpg",
+        "description": "Manage a FIFO data structure on a grid. Avoid self-intersection and maximize your Hamiltonian path.",
         "url": "games/03-snake/"
     },
     {
         "id": 4,
         "title": "Brick Breaker",
+        "tagline": "Kinematic Collision Simulation",
+        "icon": "▨",
         "category": "Arcade",
-        "description": "Shatter the glass ceiling! Control the paddle and destroy every brick on the screen.",
-        "thumbnail": "https://img.freepik.com/free-vector/brick-breaker-game-background_23-2148151944.jpg",
+        "description": "Master the law of reflection and paddle-physics in this Newtonian kinematic challenge.",
         "url": "games/04-breakout/"
     },
     {
         "id": 5,
         "title": "Cyber Runner",
+        "tagline": "Parabolic Motion Simulation",
+        "icon": "▲",
         "category": "Platformer",
-        "description": "Jump, slide, and sprint through a digital world of platforms and obstacles.",
-        "thumbnail": "https://img.freepik.com/free-vector/flat-pixel-art-style-background_23-2149176466.jpg",
+        "description": "Navigate AABB collision tiles using gravitational acceleration and vertical impulse vectors.",
         "url": "games/05-2d-platformer/"
     },
     {
         "id": 6,
         "title": "Road Crosser",
+        "tagline": "Temporal Reasoning Challenge",
+        "icon": "≡",
         "category": "Action",
-        "description": "Timing is everything. Can you navigate the busy cyber-highway and survive?",
-        "thumbnail": "https://img.freepik.com/free-vector/busy-city-road-with-cars-pedestrians_1308-33318.jpg",
+        "description": "Solve relative motion problems across lanes of moving objects with constant velocity.",
         "url": "games/06-frogger/"
     },
     {
         "id": 7,
         "title": "Whack-a-Bug",
+        "tagline": "Stochastic Reaction Test",
+        "icon": "◉",
         "category": "Casual",
-        "description": "Stop the system bugs! Click them as they appear to save the GamerHub mainframe.",
-        "thumbnail": "https://img.freepik.com/free-vector/cartoon-flat-illustration-bugs-nature_1308-31623.jpg",
+        "description": "A test of hand-eye coordination against a Poisson arrival process of system bugs.",
         "url": "games/07-whack-a-mole/"
     },
     {
         "id": 8,
         "title": "Star Siege",
+        "tagline": "Formation AI & Projection",
+        "icon": "◈",
         "category": "Shooter",
-        "description": "Defend the galaxy against waves of alien invaders in this intense space shooter.",
-        "thumbnail": "https://img.freepik.com/free-vector/retro-galaxy-space-game-background_23-2148151943.jpg",
+        "description": "Defend against synchronized alien formations using high-velocity projectile motion.",
         "url": "games/08-space-invaders/"
     },
     {
         "id": 9,
         "title": "Flutter Bird",
+        "tagline": "Inertia & Gravity Feedback",
+        "icon": "⋉",
         "category": "Casual",
-        "description": "Tap to defy gravity. How long can you stay airborne through the pipe maze?",
-        "thumbnail": "https://img.freepik.com/free-vector/bird-flying-blue-sky-background_1308-35634.jpg",
+        "description": "Manage a one-dimensional control problem using gravitational acceleration and upward impulses.",
         "url": "games/09-flappy-bird/"
     },
     {
         "id": 10,
         "title": "Cyber Mine",
+        "tagline": "Constraint Satisfaction Puzzle",
+        "icon": "⚑",
         "category": "Strategy",
-        "description": "Use logic to map out hidden mines. A single mistake could be explosive!",
-        "thumbnail": "https://img.freepik.com/free-vector/minesweeper-game-interface_23-2148151942.jpg",
+        "description": "Deduce safe nodes using logical inference and conditional probability in a hazardous field.",
         "url": "games/10-minesweeper/"
     }
 ]
